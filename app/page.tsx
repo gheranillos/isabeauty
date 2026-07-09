@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/FadeIn";
 import { ProjectLinks } from "@/components/ProjectLinks";
+import { Dimensions } from "@/components/Dimensions";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -28,10 +29,22 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .55.04.81.1v-3.5a6.37 6.37 0 0 0-.81-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.2 8.2 0 0 0 4.76 1.52V6.8a4.85 4.85 0 0 1-1-.11z" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <main className="relative flex min-h-dvh flex-col items-center overflow-hidden px-6 py-10 sm:py-14">
-      {/* Soft ambient blobs */}
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -left-24 top-16 h-64 w-64 rounded-full bg-blush/35 blur-3xl"
@@ -84,37 +97,66 @@ export default function Home() {
             </h1>
           </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <p className="mt-3 max-w-[22ch] text-balance font-sans text-base leading-snug text-ink sm:max-w-[28ch] sm:text-lg">
+          <FadeIn delay={0.18}>
+            <p className="mt-2 font-sans text-sm text-muted">
+              Directora creativa · Fundadora de Colorsgift
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.26}>
+            <p className="mt-3 max-w-[26ch] text-balance font-sans text-base leading-snug text-ink sm:max-w-[32ch] sm:text-lg">
               Traduzco tu propósito en contenido que conecta y vende.
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.3}>
+          <FadeIn delay={0.34}>
             <p className="mt-2.5 font-sans text-sm text-muted">
               Marca personal · Moda · Marketing con alma 🧚🏻‍♀️
             </p>
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.4} className="mt-9 sm:mt-11">
+        <FadeIn delay={0.42} className="mt-9 sm:mt-10">
+          <div className="space-y-3 text-center font-sans text-sm leading-relaxed text-muted sm:text-[0.95rem]">
+            <p>
+              Me formé para ser traductora. Hoy no traduzco idiomas: traduzco la
+              esencia de marcas conscientes en estrategias digitales que
+              resuenan y venden.
+            </p>
+            <p>
+              Tres años impulsando proyectos desde la estrategia y el contenido,
+              para que las dueñas de negocio recuperen su activo más valioso: el
+              tiempo.
+            </p>
+            <p>
+              En Colorsgift no creemos en fórmulas vacías. Tu marca es un ser
+              vivo — la guío en cuatro dimensiones:
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.5} className="mt-6">
+          <Dimensions />
+        </FadeIn>
+
+        <FadeIn delay={0.58} className="mt-10">
           <p className="text-center font-sans text-sm text-muted">
             Esto es lo que estoy construyendo:
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.48} className="mt-5">
+        <FadeIn delay={0.64} className="mt-5">
           <ProjectLinks />
         </FadeIn>
 
         <FadeIn
-          delay={0.7}
+          delay={0.75}
           className="mt-auto flex flex-col items-center gap-3 pt-10 pb-1 text-center"
         >
           <p className="font-sans text-xs tracking-wide text-muted/80">
             © 2026 Isa Guarache
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <motion.a
               href="https://www.instagram.com/isagbeauty/"
               target="_blank"
@@ -125,6 +167,17 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
             >
               <InstagramIcon className="h-5 w-5" />
+            </motion.a>
+            <motion.a
+              href="https://www.tiktok.com/@isagbeauty"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok de Isa Guarache"
+              className="text-muted transition-colors duration-200 hover:text-accent"
+              whileHover={{ scale: 1.12, rotate: 6 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <TikTokIcon className="h-5 w-5" />
             </motion.a>
             <a
               href="https://wa.me/584126259276"
